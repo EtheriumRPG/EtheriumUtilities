@@ -14,14 +14,14 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class CheckVisitedZoneListener implements Listener {
-    private final Location OlympSpawn = new Location(Bukkit.getWorld("world"), -101, 271, -140);
-    private final Location OlympMarket = new Location(Bukkit.getWorld("world"), -38, -2, -115);
-    private final Location MinasHub = new Location(Bukkit.getWorld("world"), 15041, 222, 21);
-    private final Location MaderaHub = new Location(Bukkit.getWorld("world"), 14861, 87, 35);
+    private final Location OlympSpawn = new Location(Bukkit.getWorld("world"), -102.5, 271, -141.5);
+    private final Location OlympMarket = new Location(Bukkit.getWorld("world"), -46.5, -2, -121.5);
+    private final Location MinasHub = new Location(Bukkit.getWorld("world"), 15041.5, 223, 21.5);
+    private final Location MaderaHub = new Location(Bukkit.getWorld("world"), 14861.5, 88, 35.5);
     private final Location Arena = new Location(Bukkit.getWorld("world"), 15014, 101, -827);
-    private final Location FieryAbyss = new Location(Bukkit.getWorld("world"), 5400, 164, -481);
+    private final Location FieryAbyss = new Location(Bukkit.getWorld("world"), 5444.5, 164, -482.5);
 
-    private final File zoneFile = new File("plugins/CheckVisitedZone/zones.yml");
+    private final File zoneFile = new File("plugins/EtheriumUtilities/CheckVisitedZone/visited_zones.yml");
     private final FileConfiguration zoneData = YamlConfiguration.loadConfiguration(zoneFile);
 
     // Método para verificar si el jugador está dentro del radio de una zona
@@ -48,7 +48,7 @@ public class CheckVisitedZoneListener implements Listener {
         try {
             zoneData.save(zoneFile);
         } catch (IOException e) {
-            Bukkit.getLogger().severe("No se pudo guardar el archivo zones.yml");
+            Bukkit.getLogger().severe("No se pudo guardar el archivo visited_zones.yml");
         }
     }
 
@@ -61,23 +61,23 @@ public class CheckVisitedZoneListener implements Listener {
                 }
                 case "OlympMarket" -> {
                     player.sendTitle("Bienvenido/a al Mercado", "Explora las tiendas", 10, 70, 20);
-                    Bukkit.getConsoleSender().sendMessage("ca grantimpossible " + player.getName() + " 1 server_quest.agorahub1");
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.agorahub1");
                 }
                 case "MinasHub" -> {
                     player.sendTitle("Bienvenido/a a Minas Hub", "Prepárate para minar", 10, 70, 20);
-                    Bukkit.getConsoleSender().sendMessage("ca grantimpossible " + player.getName() + " 1 server_quest.minehub1");
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.minehub1");
                 }
                 case "MaderaHub" -> {
                     player.sendTitle("Bienvenido/a al Hub de Madera", "Corta y recolecta recursos", 10, 70, 20);
-                    Bukkit.getConsoleSender().sendMessage("ca grantimpossible " + player.getName() + " 1 server_quest.woodhub1");
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.woodhub1");
                 }
                 case "Arena" -> {
                     player.sendTitle("Bienvenido/a al Coliseo", "Cuidado con las tormentas de arena", 10, 70, 20);
-                    Bukkit.getConsoleSender().sendMessage("ca grantimpossible " + player.getName() + " 1 server_quest.arenahub1");
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.arenahub1");
                 }
                 case "FieryAbyss" -> {
                     player.sendTitle("Bienvenido/a al Abismo Ardiente", "El calor es extremo aquí", 10, 70, 20);
-                    Bukkit.getConsoleSender().sendMessage("ca grantimpossible " + player.getName() + " 1 server_quest.fieryabyss");
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.fieryabyss");
                 }
             }
             markZoneAsVisited(player, zoneName);
