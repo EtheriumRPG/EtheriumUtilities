@@ -20,6 +20,10 @@ public class CheckVisitedZoneListener implements Listener {
     private final Location MaderaHub = new Location(Bukkit.getWorld("world"), 14861.5, 88, 35.5);
     private final Location Arena = new Location(Bukkit.getWorld("world"), 15014, 101, -827);
     private final Location FieryAbyss = new Location(Bukkit.getWorld("world"), 5444.5, 164, -482.5);
+    private final Location Mina1 = new Location(Bukkit.getWorld("world"), 15315, 30, 138.9);
+    private final Location Mina2 = new Location(Bukkit.getWorld("world"), 15300, 30, 138.9);
+    private final Location Mina3 = new Location(Bukkit.getWorld("world"), 15185, 30, 138.9 );
+    private final Location Mina4 = new Location(Bukkit.getWorld("world"), 15170, 30, 138.9);
 
     private final File zoneFile = new File("plugins/EtheriumUtilities/CheckVisitedZone/visited_zones.yml");
     private final FileConfiguration zoneData = YamlConfiguration.loadConfiguration(zoneFile);
@@ -79,6 +83,18 @@ public class CheckVisitedZoneListener implements Listener {
                     player.sendTitle("Bienvenido/a al Abismo Ardiente", "El calor es extremo aquí", 10, 70, 20);
                     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.fieryabyss");
                 }
+                case "Mina1" -> {
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.mine1");
+                }
+                case "Mina2" -> {
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.mine2");
+                }
+                case "Mina3" -> {
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.mine3");
+                }
+                case "Mina4" -> {
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.mine4");
+                }
             }
             markZoneAsVisited(player, zoneName);
         }
@@ -104,6 +120,14 @@ public class CheckVisitedZoneListener implements Listener {
             executeZoneAction(player, "Arena");
         } else if (isInZone(to, FieryAbyss, 5)) {
             executeZoneAction(player, "FieryAbyss");
+        } else if (isInZone(to, Mina1, 3)) {
+            executeZoneAction(player, "Mina1");
+        } else if (isInZone(to, Mina2, 3)) {
+            executeZoneAction(player, "Mina2");
+        } else if (isInZone(to, Mina3, 3)) {
+            executeZoneAction(player, "Mina3");
+        } else if (isInZone(to, Mina4, 3)) {
+            executeZoneAction(player, "Mina4");
         }
     }
 }
