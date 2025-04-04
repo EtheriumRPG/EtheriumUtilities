@@ -80,7 +80,7 @@ public class CheckVisitedZoneListener implements Listener {
                     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.arenahub1");
                 }
                 case "FieryAbyss" -> {
-                    player.sendTitle("Bienvenido/a al Abismo Ardiente", "El calor es extremo aquí", 10, 70, 20);
+                    player.sendTitle("Bienvenido/a al Abismo de Fuego", "El calor es extremo aquí", 10, 70, 20);
                     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.fieryabyss");
                 }
                 case "Mina1" -> {

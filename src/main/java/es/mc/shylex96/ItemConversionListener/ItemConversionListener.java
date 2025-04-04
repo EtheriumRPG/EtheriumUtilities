@@ -36,8 +36,8 @@ public class ItemConversionListener implements Listener {
     private void convertItemsToBlocks(Inventory inventory) {
         // Dependiendo del tipo de ítem, realizar la conversión correspondiente
         convertItemToBlock(inventory, Material.COAL, Material.COAL_BLOCK);
-        convertItemToBlock(inventory, Material.LAPIS_LAZULI, Material.COAL_BLOCK);
-        convertItemToBlock(inventory, Material.REDSTONE, Material.LAPIS_BLOCK);
+        convertItemToBlock(inventory, Material.LAPIS_LAZULI, Material.LAPIS_BLOCK);
+        convertItemToBlock(inventory, Material.REDSTONE, Material.REDSTONE_BLOCK);
         convertItemToBlock(inventory, Material.COPPER_INGOT, Material.COPPER_BLOCK);
         convertItemToBlock(inventory, Material.IRON_INGOT, Material.IRON_BLOCK);
         convertItemToBlock(inventory, Material.GOLD_INGOT, Material.GOLD_BLOCK);
