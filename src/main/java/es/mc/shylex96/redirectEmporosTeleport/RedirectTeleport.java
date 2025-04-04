@@ -20,13 +20,15 @@ public class RedirectTeleport implements Listener {
 
     @EventHandler
     public void onPlayerTeleport(PlayerTeleportEvent event) {
-        Bukkit.getConsoleSender().sendMessage("Teleport detectado");
+        //Bukkit.getConsoleSender().sendMessage("Teleport detectado");
         Player player = event.getPlayer();
         Location destination = event.getTo();
 
         // Comprobamos si el jugador está dentro del rango de las coordenadas positivas
         if (destination != null && isInRange(destination)) {
-            Bukkit.getConsoleSender().sendMessage("Son las coordenadas");
+            //Bukkit.getConsoleSender().sendMessage("Son las coordenadas");
+            event.setCancelled(true);
+
             // Teletransportar al jugador a las coordenadas negativas
             Location negativeLocation = new Location(destination.getWorld(), NEG_X, NEG_Y, NEG_Z);
             player.teleport(negativeLocation);
