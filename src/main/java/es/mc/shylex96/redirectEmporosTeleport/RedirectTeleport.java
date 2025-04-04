@@ -1,5 +1,6 @@
 package es.mc.shylex96.redirectEmporosTeleport;
 
+import es.mc.shylex96.EtheriumUtilities;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -8,6 +9,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerTeleportEvent;
 
 public class RedirectTeleport implements Listener {
+
+    private final EtheriumUtilities plugin;
+
     // Coordenadas originales (positivas)
     private final double POS_X = 77.5;
     private final double POS_Y = 220;
@@ -17,6 +21,10 @@ public class RedirectTeleport implements Listener {
     private final double NEG_X = -77.5;
     private final double NEG_Y = 220;
     private final double NEG_Z = -165.5;
+
+    public RedirectTeleport(EtheriumUtilities plugin) {
+        this.plugin = plugin;
+    }
 
     @EventHandler
     public void onPlayerTeleport(PlayerTeleportEvent event) {
@@ -29,9 +37,12 @@ public class RedirectTeleport implements Listener {
             //Bukkit.getConsoleSender().sendMessage("Son las coordenadas");
             event.setCancelled(true);
 
-            // Teletransportar al jugador a las coordenadas negativas
-            Location negativeLocation = new Location(destination.getWorld(), NEG_X, NEG_Y, NEG_Z);
-            player.teleport(negativeLocation);
+            // Usar un scheduler para teletransportar al jugador después de que el evento sea cancelado
+            Bukkit.getScheduler().runTask(plugin, () -> {
+                // Teletransportar al jugador a las coordenadas negativas
+                Location negativeLocation = new Location(destination.getWorld(), NEG_X, NEG_Y, NEG_Z);
+                player.teleport(negativeLocation);
+            });
         }
     }
 

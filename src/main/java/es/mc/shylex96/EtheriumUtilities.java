@@ -17,7 +17,7 @@ public class EtheriumUtilities extends JavaPlugin {
                 " §7Plugin creado por §eShylex §7ha cargado correctamente en la versión: §c" + version);
         getServer().getPluginManager().registerEvents(new ItemConversionListener(), this);
         getServer().getPluginManager().registerEvents(new CheckVisitedZoneListener(), this);
-        getServer().getPluginManager().registerEvents(new RedirectTeleport(), this);
+        getServer().getPluginManager().registerEvents(new RedirectTeleport(this), this);
     }
 
     @Override
