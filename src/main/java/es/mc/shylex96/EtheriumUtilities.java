@@ -1,6 +1,7 @@
 package es.mc.shylex96;
 
 import es.mc.shylex96.ItemConversionListener.ItemConversionListener;
+import es.mc.shylex96.checkBackpacks.CheckBackpackListener;
 import es.mc.shylex96.checkVisitedZone.CheckVisitedZoneListener;
 import es.mc.shylex96.redirectEmporosTeleport.RedirectTeleport;
 import org.bukkit.Bukkit;
@@ -18,6 +19,7 @@ public class EtheriumUtilities extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ItemConversionListener(), this);
         getServer().getPluginManager().registerEvents(new CheckVisitedZoneListener(), this);
         getServer().getPluginManager().registerEvents(new RedirectTeleport(this), this);
+        getServer().getPluginManager().registerEvents(new CheckBackpackListener(this), this);
     }
 
     @Override
