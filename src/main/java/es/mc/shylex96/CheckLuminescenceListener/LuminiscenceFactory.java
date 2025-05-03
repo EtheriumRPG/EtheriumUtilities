@@ -50,7 +50,11 @@ public class LuminiscenceFactory {
                 break;
         }
 
-        meta.addEnchant(Enchantment.UNBREAKING, 1, true);
+        Enchantment enchantment = Enchantment.getByName("DURABILITY");
+        if (enchantment != null) {
+            meta.addEnchant(enchantment, 1, true);
+        }
+
         meta.setUnbreakable(true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
 

@@ -43,15 +43,22 @@ public class CheckLuminescenceListener implements Listener {
         ItemMeta meta = item.getItemMeta();
         if (meta == null || !meta.hasDisplayName() || !meta.hasLore()) return;
 
-        String nombre = ChatColor.stripColor(meta.getDisplayName()).trim();
         List<String> lore = meta.getLore();
-
         String tipoStr = lore.stream()
-                .filter(linea -> ChatColor.stripColor(linea).toLowerCase().contains("otorgará una luminiscencia"))
                 .map(ChatColor::stripColor)
-                .map(linea -> linea.replace("Otorgará una Luminiscencia:", "").trim().toUpperCase())
+                .filter(linea -> linea.toLowerCase().contains("luminiscencia"))
+                .map(linea -> {
+                    // Extraigo la última palabra de la frase (el tipo de luminiscencia)
+                    String[] palabras = linea.split(" ");
+                    String ultima = palabras[palabras.length - 1];
+                    // Elimino el punto final
+                    ultima = ultima.replaceAll("[^a-zA-Z]", "");
+                    // Capitalizo la primera letra y minúsculas el resto
+                    return ultima.substring(0, 1).toUpperCase() + ultima.substring(1).toLowerCase();
+                })
                 .findFirst()
                 .orElse(null);
+
 
         if (tipoStr == null) {
             player.sendMessage(ChatColor.RED + "Ha ocurrido un error al canjear");
@@ -62,6 +69,7 @@ public class CheckLuminescenceListener implements Listener {
         try {
             tipo = LuminiscenceFactory.TipoLuminiscencia.valueOf(tipoStr);
         } catch (IllegalArgumentException e) {
+            // player.sendMessage(ChatColor.RED + "El tipo de luminiscencia no es válido. Tipo extraído: " + tipoStr);
             player.sendMessage(ChatColor.RED + "El tipo de luminiscencia no es válido.");
             return;
         }
