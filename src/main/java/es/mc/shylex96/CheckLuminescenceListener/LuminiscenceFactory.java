@@ -25,27 +25,27 @@ public class LuminiscenceFactory {
             case Misteriosa:
                 meta.setDisplayName(ChatColor.GREEN + "Luminiscencia Misteriosa");
                 meta.setLore(List.of(
-                        ChatColor.GRAY + "Un objeto que desborda pura magia oscura,",
-                        ChatColor.GRAY + "irradiando una energía negativa que crea un",
-                        ChatColor.GRAY + "vacío eterno."
+                        ChatColor.LIGHT_PURPLE + "Un objeto que desborda pura magia oscura,",
+                        ChatColor.LIGHT_PURPLE + "irradiando una energía negativa que crea un",
+                        ChatColor.LIGHT_PURPLE + "vacío eterno."
                 ));
                 break;
             case Espectral:
                 meta.setDisplayName(ChatColor.AQUA + "Luminiscencia Espectral");
                 meta.setLore(List.of(
-                        ChatColor.GRAY + "Un objeto que posee un resplandor de origen",
-                        ChatColor.GRAY + "cósmico que fluye desde el abismo estelar.",
-                        ChatColor.GRAY + "Su brillo místico se emplea para fortalecer",
-                        ChatColor.GRAY + "objetos a un nivel celestial."
+                        ChatColor.LIGHT_PURPLE + "Un objeto que posee un resplandor de origen",
+                        ChatColor.LIGHT_PURPLE + "cósmico que fluye desde el abismo estelar.",
+                        ChatColor.LIGHT_PURPLE + "Su brillo místico se emplea para fortalecer",
+                        ChatColor.LIGHT_PURPLE + "objetos a un nivel celestial."
                 ));
                 break;
             case Eterna:
                 meta.setDisplayName(ChatColor.GOLD + "Luminiscencia Eterna");
                 meta.setLore(List.of(
-                        ChatColor.GRAY + "Creada a partir del primer estallido de",
-                        ChatColor.GRAY + "luz cósmica y refinada en la calma del",
-                        ChatColor.GRAY + "vacío infinito. Es inmutable, como parte",
-                        ChatColor.GRAY + "del equilibrio universal."
+                        ChatColor.LIGHT_PURPLE + "Creada a partir del primer estallido de",
+                        ChatColor.LIGHT_PURPLE + "luz cósmica y refinada en la calma del",
+                        ChatColor.LIGHT_PURPLE + "vacío infinito. Es inmutable, como parte",
+                        ChatColor.LIGHT_PURPLE + "del equilibrio universal."
                 ));
                 break;
         }

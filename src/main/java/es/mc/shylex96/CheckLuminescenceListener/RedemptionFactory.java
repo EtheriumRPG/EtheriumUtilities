@@ -22,39 +22,39 @@ public class RedemptionFactory {
 
         switch (tipo) {
             case Misteriosa:
-                meta.setDisplayName("{\"text\":\"Luminiscencia Misteriosa\",\"italic\":false,\"color\":\"green\"}");
+                meta.setDisplayName(ChatColor.GREEN + "Luminiscencia Misteriosa");
                 meta.setLore(Arrays.asList(
-                        "{\"text\":\"Este papel otorgará una luminiscencia misteriosa.\",\"italic\":false,\"color\":\"gray\"}",
-                        "{\"text\":\"\",\"italic\":false,\"color\":\"gray\"}",
-                        "{\"text\":\"Usa este papel haciendo clic derecho con él en la mano.\",\"italic\":false,\"color\":\"light_purple\"}",
-                        "{\"text\":\"Canjearás la luminiscencia correspondiente y podrás usarla.\",\"italic\":false,\"color\":\"light_purple\"}",
-                        "{\"text\":\"\",\"italic\":false,\"color\":\"gray\"}",
-                        "{\"text\":\"⚠ Este canje es de un solo uso. Al canjear\",\"italic\":false,\"color\":\"red\"}",
-                        "{\"text\":\"la luminiscencia, este papel desaparecerá.\",\"italic\":false,\"color\":\"red\"}"
+                        ChatColor.GRAY + "Este papel otorgará una luminiscencia misteriosa.",
+                        "",
+                        ChatColor.LIGHT_PURPLE + "Usa este papel haciendo clic derecho con él en la mano.",
+                        ChatColor.LIGHT_PURPLE + "Canjearás la luminiscencia correspondiente y podrás usarla.",
+                        "",
+                        ChatColor.RED + "⚠ Este canje es de un solo uso. Al canjear",
+                        ChatColor.RED + "la luminiscencia, este papel desaparecerá."
                 ));
                 break;
             case Espectral:
-                meta.setDisplayName("{\"text\":\"Luminiscencia Espectral\",\"italic\":false,\"color\":\"aqua\"}");
+                meta.setDisplayName(ChatColor.AQUA + "Luminiscencia Espectral");
                 meta.setLore(Arrays.asList(
-                        "{\"text\":\"Este papel otorgará una luminiscencia espectral.\",\"italic\":false,\"color\":\"gray\"}",
-                        "{\"text\":\"\",\"italic\":false,\"color\":\"gray\"}",
-                        "{\"text\":\"Usa este papel haciendo clic derecho con él en la mano.\",\"italic\":false,\"color\":\"light_purple\"}",
-                        "{\"text\":\"Canjearás la luminiscencia correspondiente y podrás usarla.\",\"italic\":false,\"color\":\"light_purple\"}",
-                        "{\"text\":\"\",\"italic\":false,\"color\":\"gray\"}",
-                        "{\"text\":\"⚠ Este canje es de un solo uso. Al canjear\",\"italic\":false,\"color\":\"red\"}",
-                        "{\"text\":\"la luminiscencia, este papel desaparecerá.\",\"italic\":false,\"color\":\"red\"}"
+                        ChatColor.GRAY + "Este papel otorgará una luminiscencia espectral.",
+                        "",
+                        ChatColor.LIGHT_PURPLE + "Usa este papel haciendo clic derecho con él en la mano.",
+                        ChatColor.LIGHT_PURPLE + "Canjearás la luminiscencia correspondiente y podrás usarla.",
+                        "",
+                        ChatColor.RED + "⚠ Este canje es de un solo uso. Al canjear",
+                        ChatColor.RED + "la luminiscencia, este papel desaparecerá."
                 ));
                 break;
             case Eterna:
-                meta.setDisplayName("{\"text\":\"Luminiscencia Eterna\",\"italic\":false,\"color\":\"gold\"}");
+                meta.setDisplayName(ChatColor.GOLD + "Luminiscencia Eterna");
                 meta.setLore(Arrays.asList(
-                        "{\"text\":\"Este papel otorgará una luminiscencia eterna.\",\"italic\":false,\"color\":\"gray\"}",
-                        "{\"text\":\"\",\"italic\":false,\"color\":\"gray\"}",
-                        "{\"text\":\"Usa este papel haciendo clic derecho con él en la mano.\",\"italic\":false,\"color\":\"light_purple\"}",
-                        "{\"text\":\"Canjearás la luminiscencia correspondiente y podrás usarla.\",\"italic\":false,\"color\":\"light_purple\"}",
-                        "{\"text\":\"\",\"italic\":false,\"color\":\"gray\"}",
-                        "{\"text\":\"⚠ Este canje es de un solo uso. Al canjear\",\"italic\":false,\"color\":\"red\"}",
-                        "{\"text\":\"la luminiscencia, este papel desaparecerá.\",\"italic\":false,\"color\":\"red\"}"
+                        ChatColor.GRAY + "Este papel otorgará una luminiscencia eterna.",
+                        "",
+                        ChatColor.LIGHT_PURPLE + "Usa este papel haciendo clic derecho con él en la mano.",
+                        ChatColor.LIGHT_PURPLE + "Canjearás la luminiscencia correspondiente y podrás usarla.",
+                        "",
+                        ChatColor.RED + "⚠ Este canje es de un solo uso. Al canjear",
+                        ChatColor.RED + "la luminiscencia, este papel desaparecerá."
                 ));
                 break;
         }
