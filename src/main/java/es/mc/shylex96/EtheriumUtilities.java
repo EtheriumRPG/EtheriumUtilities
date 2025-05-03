@@ -1,5 +1,6 @@
 package es.mc.shylex96;
 
+import es.mc.shylex96.CheckLuminescenceListener.RedemptionCommand;
 import es.mc.shylex96.ItemConversionListener.ItemConversionListener;
 import es.mc.shylex96.checkBackpacks.CheckBackpackListener;
 import es.mc.shylex96.CheckLuminescenceListener.CheckLuminescenceListener;
@@ -22,6 +23,11 @@ public class EtheriumUtilities extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new RedirectTeleport(this), this);
         getServer().getPluginManager().registerEvents(new CheckBackpackListener(this), this);
         getServer().getPluginManager().registerEvents(new CheckLuminescenceListener(this), this);
+
+        // Registrar el comando y su ejecutor
+        this.getCommand("papelmisterioso").setExecutor(new RedemptionCommand());
+        this.getCommand("papelespectral").setExecutor(new RedemptionCommand());
+        this.getCommand("papeleterno").setExecutor(new RedemptionCommand());
     }
 
     @Override

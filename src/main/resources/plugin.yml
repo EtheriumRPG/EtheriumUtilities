@@ -1,5 +1,12 @@
 main: es.mc.shylex96.EtheriumUtilities
-version: 4.0.0
+version: 5.0.0
 name: EtheriumUtilities
 author: Shylex96
 api-version: 1.13
+commands:
+  papelmisterioso:
+    description: Da un papel de luminiscencia misteriosa.
+  papelespectral:
+    description: Da un papel de luminiscencia espectral.
+  papeleterno:
+    description: Da un papel de luminiscencia eterna.
