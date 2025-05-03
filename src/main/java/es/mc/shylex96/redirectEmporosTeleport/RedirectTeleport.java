@@ -20,7 +20,7 @@ public class RedirectTeleport implements Listener {
     // Coordenadas alternativas (negativas)
     private final double NEG_X = -77.5;
     private final double NEG_Y = 220;
-    private final double NEG_Z = -165.5;
+    private final double NEG_Z = -161.5;
 
     public RedirectTeleport(EtheriumUtilities plugin) {
         this.plugin = plugin;
@@ -40,7 +40,7 @@ public class RedirectTeleport implements Listener {
             // Usar un scheduler para teletransportar al jugador después de que el evento sea cancelado
             Bukkit.getScheduler().runTask(plugin, () -> {
                 // Teletransportar al jugador a las coordenadas negativas
-                Location negativeLocation = new Location(destination.getWorld(), NEG_X, NEG_Y, NEG_Z);
+                Location negativeLocation = new Location(destination.getWorld(), NEG_X, NEG_Y, NEG_Z, -180, 0);
                 player.teleport(negativeLocation);
             });
         }
