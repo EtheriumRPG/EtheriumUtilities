@@ -4,6 +4,7 @@ import es.mc.shylex96.CheckLuminescenceListener.RedemptionCommand;
 import es.mc.shylex96.ItemConversionListener.ItemConversionListener;
 import es.mc.shylex96.checkBackpacks.CheckBackpackListener;
 import es.mc.shylex96.CheckLuminescenceListener.CheckLuminescenceListener;
+import es.mc.shylex96.checkNaturalSpawner.CancelNaturalSpawnerListener;
 import es.mc.shylex96.checkVisitedZone.CheckVisitedZoneListener;
 import es.mc.shylex96.redirectEmporosTeleport.RedirectTeleport;
 import org.bukkit.Bukkit;
@@ -23,6 +24,7 @@ public class EtheriumUtilities extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new RedirectTeleport(this), this);
         getServer().getPluginManager().registerEvents(new CheckBackpackListener(this), this);
         getServer().getPluginManager().registerEvents(new CheckLuminescenceListener(this), this);
+        getServer().getPluginManager().registerEvents(new CancelNaturalSpawnerListener(), this);
 
         // Registrar el comando y su ejecutor
         this.getCommand("papelmisterioso").setExecutor(new RedemptionCommand());
