@@ -20,6 +20,7 @@ public class CheckVisitedZoneListener implements Listener {
     private final Location MaderaHub = new Location(Bukkit.getWorld("world"), 14861.5, 88, 35.5);
     private final Location Arena = new Location(Bukkit.getWorld("world"), 15014, 101, -827);
     private final Location FieryAbyss = new Location(Bukkit.getWorld("world"), 5444.5, 164, -482.5);
+    private final Location VenomousAbyss = new Location(Bukkit.getWorld("world"), 15073.5, -21.0, -830.5);
     private final Location Mina1 = new Location(Bukkit.getWorld("world"), 15315, 30, 138.9);
     private final Location Mina2 = new Location(Bukkit.getWorld("world"), 15300, 30, 138.9);
     private final Location Mina3 = new Location(Bukkit.getWorld("world"), 15185, 30, 138.9 );
@@ -83,6 +84,10 @@ public class CheckVisitedZoneListener implements Listener {
                     player.sendTitle("Bienvenido/a al Abismo de Fuego", "El calor es extremo aquí", 10, 70, 20);
                     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.fieryabyss");
                 }
+                case "VenomousAbyss" -> {
+                    player.sendTitle("Bienvenido/a al Abismo Venenoso", "Una cueva extramadamente peligrosa", 10, 70, 20);
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.venomousabyss");
+                }
                 case "Mina1" -> {
                     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ca grantimpossible " + player.getName() + " 1 server_quest.mine_d");
                 }
@@ -120,6 +125,8 @@ public class CheckVisitedZoneListener implements Listener {
             executeZoneAction(player, "Arena");
         } else if (isInZone(to, FieryAbyss, 5)) {
             executeZoneAction(player, "FieryAbyss");
+        } else if (isInZone(to, VenomousAbyss, 5)) {
+            executeZoneAction(player, "VenomousAbyss");
         } else if (isInZone(to, Mina1, 3)) {
             executeZoneAction(player, "Mina1");
         } else if (isInZone(to, Mina2, 3)) {
